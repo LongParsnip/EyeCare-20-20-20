@@ -1,14 +1,13 @@
 # EyeCare-20-20-20
 A small app that reminds you to look away from your computer screen occasionally.
 
-Features:
-
-  -20 minute activity timer.
-  -Timer is paused after 30 seconds of inactivity.
-  -Timer is reset after 5 minutes of inactivity.
-  -Confirm close application before it can be closed.
+## Features:
+  * 20 minute activity timer.
+  * Timer is paused after 30 seconds of inactivity.
+  * Timer is reset after 5 minutes of inactivity.
+  * Confirm close application before it can be closed.
   
-  How to use:
+## How to use:
     1. Run the application (after which you can minimize).
     2. When the app has counted 20 minutes of activity it will maximize itself, set as the top most window and flash red.
     3. When app is instructing you to take a break you must not use the mouse of keyboard for 20 seconds.
