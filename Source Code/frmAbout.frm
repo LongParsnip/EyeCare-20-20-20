@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form frmAbout 
    BorderStyle     =   3  'Fixed Dialog
-   ClientHeight    =   4245
+   ClientHeight    =   4920
    ClientLeft      =   255
    ClientTop       =   1410
    ClientWidth     =   7275
@@ -12,22 +12,48 @@ Begin VB.Form frmAbout
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4245
+   ScaleHeight     =   4920
    ScaleWidth      =   7275
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame1 
-      Height          =   4050
+      Height          =   4770
       Left            =   120
       TabIndex        =   0
       Top             =   120
       Width           =   7080
+      Begin VB.Label Label5 
+         Caption         =   "<- Click to open"
+         Height          =   255
+         Left            =   3360
+         TabIndex        =   9
+         Top             =   3960
+         Width           =   2175
+      End
+      Begin VB.Label lblPayPal 
+         Caption         =   "https://paypal.me/PaulAtkins88"
+         BeginProperty Font 
+            Name            =   "Calibri"
+            Size            =   11.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   -1  'True
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00FF0000&
+         Height          =   255
+         Left            =   240
+         TabIndex        =   8
+         Top             =   3960
+         Width           =   4335
+      End
       Begin VB.Label Label4 
          Caption         =   "<- Click to copy"
          Height          =   255
          Left            =   4560
          TabIndex        =   7
-         Top             =   3720
+         Top             =   4320
          Width           =   2175
       End
       Begin VB.Label lblBTC 
@@ -45,12 +71,12 @@ Begin VB.Form frmAbout
          Height          =   255
          Left            =   240
          TabIndex        =   6
-         Top             =   3720
+         Top             =   4320
          Width           =   4335
       End
       Begin VB.Label Label3 
-         Caption         =   "If you like this app and want to support me, please consider donating to my bitcoin address.:"
-         Height          =   255
+         Caption         =   "If you like this app and want to support me, please consider donating to my paypal or bitcoin address.:"
+         Height          =   495
          Left            =   240
          TabIndex        =   5
          Top             =   3480
@@ -124,6 +150,10 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
+Private Const IDC_HAND = 32649&
+Private Declare Function SetCursor Lib "user32" (ByVal hCursor As Long) As Long
+Private Declare Function LoadCursor Lib "user32" Alias "LoadCursorA" (ByVal hInstance As Long, ByVal lpCursorName As Long) As Long
+
 Private Sub Form_KeyPress(KeyAscii As Integer)
     Unload Me
 End Sub
@@ -136,4 +166,17 @@ Private Sub lblBTC_Click()
     Clipboard.Clear
     Clipboard.SetText lblBTC.Caption
     Unload Me
+End Sub
+
+Private Sub lblBTC_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    SetCursor LoadCursor(0, IDC_HAND)
+End Sub
+
+Private Sub lblPayPal_Click()
+Dim objShellApplication: Set objShellApplication = CreateObject("Shell.Application")
+    objShellApplication.Open lblPayPal.Caption
+End Sub
+
+Private Sub lblPayPal_MouseMove(Button As Integer, Shift As Integer, X As Single, Y As Single)
+    SetCursor LoadCursor(0, IDC_HAND)
 End Sub
