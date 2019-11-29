@@ -18,4 +18,4 @@ A small app that reminds you to look away from your computer screen occasionally
     3. When app is instructing you to take a break you must not use the mouse of keyboard for 20 seconds.
     4. Once 20 seconds has passed (where you should be looking at something 20 ft [6m] away), the timer will reset and the app will minimize itself again.
     
-    Note: If you are like me and have multiple workstations you can use the network mode to connect your workstations together (up to workstations supported, but only tested up to 3). One computer must be the server (Listen button) and the rest must then be connected to the IP of the Listen server.
+    Note: If you are like me and have multiple workstations you can use the network mode to connect your workstations together (up to 10 workstations supported, but only tested up to 3). One computer must be the server (Listen button) and the rest must then be connected to the IP of the Listen server.
